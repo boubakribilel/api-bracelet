@@ -1,6 +1,7 @@
 FROM python:3
-ADD __main__.py /
-ADD requirements.txt /
-ADD _version.py /
+ADD __main__.py /app
+ADD requirements.txt /app
+ADD _version.py /app
+WORKDIR /app
 RUN pip install -r requirements.txt
-CMD [ "python", "./__main__.py" ]
+CMD [ "python", "/app/__main__.py" ]
